@@ -18,9 +18,7 @@ app.http("httpTrigger1", {
       const templateName = requestData.templateName;  // Asegúrate de que este nombre coincida con el del JSON
       const dataTemplate = requestData.dataTemplate;
       const to = requestData.to;
-      console.log(requestData);
       console.log(dataTemplate);
-      
 
       // Validar templateName
       if (typeof templateName !== 'string' || !templateName.trim()) {
@@ -50,7 +48,8 @@ app.http("httpTrigger1", {
       // Generar el HTML de la plantilla
       let html;
       try {
-        html = template({ name: dataTemplate.name });
+        // Pasar todo el objeto dataTemplate a la plantilla
+        html = template(dataTemplate);
       } catch (renderError) {
         console.error("Error al renderizar la plantilla:", renderError);
         return { status: 500, body: "Error al renderizar la plantilla." };
@@ -85,6 +84,3 @@ app.http("httpTrigger1", {
     }
   },
 });
-
-
-

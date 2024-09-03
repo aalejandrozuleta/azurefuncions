@@ -85,7 +85,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="Transkodiak.png" alt="Transkodiak Logo">
+            <img src="https://images123.blob.core.windows.net/img/1725382051253-Transkodiak.png" alt="Transkodiak Logo">
             <h1>Bienvenido a Transkodiak</h1>
         </div>
         <div class="content">
@@ -94,8 +94,8 @@
                 ¡Bienvenido a Transkodiak! Has sido registrado exitosamente como transportador por una empresa intermediaria. A continuación, encontrarás tus credenciales para acceder a nuestra plataforma:
             </p>
             <div class="info-container">
-                <span id="email-code">Correo: {{email}}</span>
-                <span id="password-code">Contraseña: {{password}}</span>
+                <p id="email-code">Correo: {{email}} </p>
+                <p id="password-code">Contraseña: {{password}} </p>
             </div>
             <div class="cta">
                 <button onclick="copyEmail()">Copiar Correo</button>
@@ -109,31 +109,5 @@
             <p>Transkodiak © 2024. Todos los derechos reservados.</p>
         </div>
     </div>
-
-    <script>
-        function copyEmail() {
-            var email = document.getElementById("email-code").innerText.replace("Correo: ", "");
-            navigator.clipboard.writeText(email).then(
-                function () {
-                    alert("Correo copiado: " + email);
-                },
-                function (err) {
-                    alert("Error al copiar el correo: " + err);
-                }
-            );
-        }
-
-        function copyPassword() {
-            var password = document.getElementById("password-code").innerText.replace("Contraseña: ", "");
-            navigator.clipboard.writeText(password).then(
-                function () {
-                    alert("Contraseña copiada: " + password);
-                },
-                function (err) {
-                    alert("Error al copiar la contraseña: " + err);
-                }
-            );
-        }
-    </script>
 </body>
 </html>
