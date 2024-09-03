@@ -18,7 +18,6 @@ app.http("httpTrigger1", {
       const templateName = requestData.templateName;  // Asegúrate de que este nombre coincida con el del JSON
       const dataTemplate = requestData.dataTemplate;
       const to = requestData.to;
-      console.log(dataTemplate);
 
       // Validar templateName
       if (typeof templateName !== 'string' || !templateName.trim()) {
