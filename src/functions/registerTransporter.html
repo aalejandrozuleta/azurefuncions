@@ -102,10 +102,6 @@
           <p id="email-code">Correo: {{email}}</p>
           <p id="password-code">Contraseña: {{password}}</p>
         </div>
-        <div class="cta">
-          <button onclick="copyEmail()">Copiar Correo</button>
-          <button onclick="copyPassword()">Copiar Contraseña</button>
-        </div>
         <p>
           Te recomendamos cambiar tu contraseña después de iniciar sesión por
           primera vez.
@@ -115,24 +111,5 @@
         <p>Transkodiak © 2024. Todos los derechos reservados.</p>
       </div>
     </div>
-    <script>
-        function copyEmail() {
-            let emailCode = document.getElementById("email-code").innerText.replace('Correo: ', '');
-            navigator.clipboard.writeText(emailCode).then(function() {
-                alert("Correo copiado: " + emailCode);
-            }, function(err) {
-                alert("Error al copiar el correo: " + err);
-            });
-        }
-
-        function copyPassword() {
-            let passwordCode = document.getElementById("password-code").innerText.replace('Contraseña: ', '');
-            navigator.clipboard.writeText(passwordCode).then(function() {
-                alert("Contraseña copiada: " + passwordCode);
-            }, function(err) {
-                alert("Error al copiar la contraseña: " + err);
-            });
-        }
-    </script>
   </body>
 </html>
